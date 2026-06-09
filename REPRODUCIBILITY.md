@@ -6,13 +6,13 @@ Finite-flow and gap-energy experiments are heuristic diagnostics.
 
 ## Install
 
-```powershell
+```bash
 python -m pip install -e ".[dev]"
 ```
 
 ## Validate
 
-```powershell
+```bash
 python -m pytest
 python -m compileall -q src scripts tests
 python -m ruff check .
@@ -30,13 +30,13 @@ Expected current status:
 
 This command uses committed curated CSVs and should work from a clean clone:
 
-```powershell
+```bash
 riemann-lab compare-candidates --out outputs/candidate_comparison
 ```
 
 ## Historical Artifact Reproduction
 
-```powershell
+```bash
 python scripts/reproduce_lehmer_scan.py
 python scripts/reproduce_gap_energy.py
 ```
@@ -44,6 +44,11 @@ python scripts/reproduce_gap_energy.py
 Historical reproduction scripts may require the local historical artifacts under
 `artifacts/unpacked/`. The public candidate-comparison command uses curated
 processed CSVs under `data/processed/candidate_comparison/`.
+
+Some historical artifact names and copied source reports use legacy
+`cert`/`certificate` wording. Public claims in this repository are governed by
+the current claim-strength labels and disclaimers: these files are treated as
+historical generated artifacts, not proof certificates.
 
 ## Expected Key Values
 

@@ -20,14 +20,16 @@ Lambda <= 0 is not established.
   and a new upper bound for the de Bruijn-Newman constant](https://arxiv.org/abs/1904.12438).
 - Timothy S. Trudgian:
   [An improved upper bound for the argument of the Riemann zeta-function on
-  the critical line II](https://www.ams.org/mcom/2012-81-278/S0025-5718-2011-02537-8/S0025-5718-2011-02537-8.pdf).
+  the critical line II](https://arxiv.org/abs/1208.5846).
 - George Csordas, Wayne Smith, and Richard S. Varga:
   [Lehmer pairs of zeros, the de Bruijn-Newman constant, and the Riemann
   Hypothesis](https://www.math.kent.edu/~varga/pub/paper_206.pdf).
 - Guy Robin:
-  [Grandes valeurs de la fonction somme des diviseurs et hypothese de Riemann](http://zakuski.utsa.edu/~jagy/Robin_1984.pdf).
+  [Grandes valeurs de la fonction somme des diviseurs et hypothese de Riemann](https://zbmath.org/0556.10025);
+  see also
+  [On Robin's criterion for the Riemann Hypothesis](https://arxiv.org/abs/math/0604314).
 - Jeffrey C. Lagarias:
-  [An Elementary Problem Equivalent to the Riemann Hypothesis](https://www.tandfonline.com/doi/abs/10.1080/00029890.2002.11919883).
+  [An Elementary Problem Equivalent to the Riemann Hypothesis](https://arxiv.org/abs/math/0008177).
 
 ## Use Policy
 

@@ -98,6 +98,11 @@ local artifacts under `artifacts/unpacked/`. Those large and duplicated
 historical packages are intentionally ignored by Git and can be distributed as
 release assets or restored from documented sources.
 
+Some release assets and copied historical source reports use legacy
+`cert`/`certificate` wording in filenames or text. Treat that as historical
+artifact naming. Current public claims are governed by the claim-strength labels
+and disclaimers in this repository, not by legacy package names.
+
 ## Example CLI Commands
 
 Robin and Lagarias finite scan:
@@ -206,14 +211,16 @@ See [docs/limitations.md](docs/limitations.md) and
   and a new upper bound for the de Bruijn-Newman constant](https://arxiv.org/abs/1904.12438).
 - Timothy S. Trudgian:
   [An improved upper bound for the argument of the Riemann zeta-function on
-  the critical line II](https://www.ams.org/journals/mcom/2012-81-278/S0025-5718-2011-02537-8/).
+  the critical line II](https://arxiv.org/abs/1208.5846).
 - George Csordas, Wayne Smith, and Richard S. Varga:
   [Lehmer pairs of zeros, the de Bruijn-Newman constant, and the Riemann
   Hypothesis](https://www.math.kent.edu/~varga/pub/paper_206.pdf).
 - Guy Robin:
-  [Grandes valeurs de la fonction somme des diviseurs et hypothese de Riemann](http://zakuski.utsa.edu/~jagy/Robin_1984.pdf).
+  [Grandes valeurs de la fonction somme des diviseurs et hypothese de Riemann](https://zbmath.org/0556.10025);
+  see also
+  [On Robin's criterion for the Riemann Hypothesis](https://arxiv.org/abs/math/0604314).
 - Jeffrey C. Lagarias:
-  [An Elementary Problem Equivalent to the Riemann Hypothesis](https://www.tandfonline.com/doi/abs/10.1080/00029890.2002.11919883).
+  [An Elementary Problem Equivalent to the Riemann Hypothesis](https://arxiv.org/abs/math/0008177).
 
 ## Citation
 
