@@ -9,19 +9,29 @@ Lambda <= 0 is not established.
 
 ## Core References
 
-- Clay Mathematics Institute, Riemann Hypothesis problem description:
-  https://www.claymath.org/millennium/riemann-hypothesis/
-- B. Rodgers and T. Tao, "The de Bruijn-Newman constant is non-negative."
-- Polymath project work on upper bounds for the de Bruijn-Newman constant.
-- A. M. Odlyzko, tables of zeros of the Riemann zeta function:
-  http://www.dtc.umn.edu/~odlyzko/zeta_tables/
-- T. S. Trudgian, explicit bounds related to the argument of the zeta function
-  and zero-counting estimates.
-- R. S. Lehman and later work on Lehmer pairs and close zeta zeros.
-- G. Robin, Robin's criterion for the Riemann Hypothesis.
-- J. C. Lagarias, Lagarias' elementary criterion equivalent to RH.
+- Clay Mathematics Institute:
+  [Riemann Hypothesis](https://www.claymath.org/riemann/).
+- A. M. Odlyzko:
+  [Tables of zeros of the Riemann zeta function](http://www.dtc.umn.edu/~odlyzko/zeta_tables/).
+- Brad Rodgers and Terence Tao:
+  [The de Bruijn-Newman constant is non-negative](https://arxiv.org/abs/1801.05914).
+- D. H. J. Polymath:
+  [Effective approximation of heat flow evolution of the Riemann xi function,
+  and a new upper bound for the de Bruijn-Newman constant](https://arxiv.org/abs/1904.12438).
+- Timothy S. Trudgian:
+  [An improved upper bound for the argument of the Riemann zeta-function on
+  the critical line II](https://www.ams.org/mcom/2012-81-278/S0025-5718-2011-02537-8/S0025-5718-2011-02537-8.pdf).
+- George Csordas, Wayne Smith, and Richard S. Varga:
+  [Lehmer pairs of zeros, the de Bruijn-Newman constant, and the Riemann
+  Hypothesis](https://www.math.kent.edu/~varga/pub/paper_206.pdf).
+- Guy Robin:
+  [Grandes valeurs de la fonction somme des diviseurs et hypothese de Riemann](http://zakuski.utsa.edu/~jagy/Robin_1984.pdf).
+- Jeffrey C. Lagarias:
+  [An Elementary Problem Equivalent to the Riemann Hypothesis](https://www.tandfonline.com/doi/abs/10.1080/00029890.2002.11919883).
 
-The references list is a starting bibliography for the lab. Claims and
-constants used in reports should be checked against the primary papers before
-publication.
+## Use Policy
 
+This list is a starting bibliography for the lab. Claims and constants used in
+reports should be checked against the primary papers before publication. When a
+result in this repository depends on historical generated artifacts, cite both
+the relevant primary mathematical source and the repository provenance record.

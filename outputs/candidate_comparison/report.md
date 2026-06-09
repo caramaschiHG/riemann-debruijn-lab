@@ -6,8 +6,8 @@ This is numerical/heuristic unless explicitly stated.
 Lambda <= 0 is not established.
 
 ## Input Data
-- candidate summary: `data\processed\candidate_comparison\gap_energy_flow_candidate_summary.csv`
-- radius summary: `data\processed\candidate_comparison\gap_energy_flow_radius_summary.csv`
+- candidate summary: `data/processed/candidate_comparison/gap_energy_flow_candidate_summary.csv`
+- radius summary: `data/processed/candidate_comparison/gap_energy_flow_radius_summary.csv`
 
 ## Claim Strength
 - FACT_FROM_SOURCE_DATA: source rows copied from historical artifacts.
@@ -24,6 +24,10 @@ Lambda <= 0 is not established.
 - [NUMERICAL_COMPUTATION] The rankings disagree; this is expected because each metric probes a different finite diagnostic.
 - [CONDITIONAL_STATEMENT] Candidate A remains dominant by normalized gap and explicit-style gbar upper: True.
 - [CONDITIONAL_STATEMENT] 3 candidate rows lack explicit-style gbar upper values and are not ranked by that metric.
+
+## Candidate Notes
+- Candidate A is the around_1e12 close pair `1000000008625/1000000008626`. In the available rows, it is the best combined case by normalized gap and explicit-style gbar upper.
+- The around_1e21 pair `1000000000000000001635/1000000000000000001636` ranks strongest by finite-flow near-collision time, but it carries the strongest source-precision caution. Treat it as a heuristic stress case, not as a stronger mathematical result.
 
 ## Stable Patterns
 - The strongest normalized-gap candidates are also very strong local Lehmer-index candidates.

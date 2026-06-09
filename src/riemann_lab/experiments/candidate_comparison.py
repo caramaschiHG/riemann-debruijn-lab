@@ -311,6 +311,8 @@ def write_candidate_report(
 ) -> Path:
     """Write the markdown comparison report."""
 
+    candidate_summary_display = candidate_summary.as_posix()
+    radius_summary_display = radius_summary.as_posix()
     strongest_norm = frame.sort_values("rank_normalized_gap").iloc[0]
     valid_gbar = frame.dropna(subset=["explicit_gbar_upper"]).sort_values("rank_gbar_upper")
     strongest_gbar = None if valid_gbar.empty else valid_gbar.iloc[0]
@@ -331,8 +333,8 @@ def write_candidate_report(
         report_warning_block(),
         "",
         "## Input Data",
-        f"- candidate summary: `{candidate_summary}`",
-        f"- radius summary: `{radius_summary}`",
+        f"- candidate summary: `{candidate_summary_display}`",
+        f"- radius summary: `{radius_summary_display}`",
         "",
         "## Claim Strength",
         f"- {ClaimStrength.FACT_FROM_SOURCE_DATA.value}: source rows copied from historical artifacts.",
@@ -384,8 +386,19 @@ def write_candidate_report(
             "- "
             + labeled_claim(
                 ClaimStrength.CONDITIONAL_STATEMENT,
-                f"{missing_gbar_count} candidate rows lack explicit-style gbar upper values and are not ranked by that metric.",
+                f"{missing_gbar_count} candidate rows lack explicit-style gbar upper "
+                "values and are not ranked by that metric.",
             ),
+            "",
+            "## Candidate Notes",
+            "- Candidate A is the around_1e12 close pair "
+            "`1000000008625/1000000008626`. In the available rows, it is the "
+            "best combined case by normalized gap and explicit-style gbar upper.",
+            "- The around_1e21 pair "
+            "`1000000000000000001635/1000000000000000001636` ranks strongest "
+            "by finite-flow near-collision time, but it carries the strongest "
+            "source-precision caution. Treat it as a heuristic stress case, "
+            "not as a stronger mathematical result.",
             "",
             "## Stable Patterns",
             "- The strongest normalized-gap candidates are also very strong local Lehmer-index candidates.",

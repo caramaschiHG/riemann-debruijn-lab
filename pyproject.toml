@@ -5,7 +5,7 @@ build-backend = "setuptools.build_meta"
 [project]
 name = "riemann-debruijn-lab"
 version = "0.1.0"
-description = "Honest computational laboratory for zeta zeros, Lehmer pairs, de Bruijn-Newman experiments, and RH-equivalent criteria."
+description = "Reproducible computational laboratory for zeta zeros, Lehmer pairs, de Bruijn-Newman diagnostics, and RH-equivalent finite criteria."
 readme = "README.md"
 requires-python = ">=3.11"
 license = { text = "MIT" }

@@ -25,6 +25,30 @@ time measure different finite aspects of candidate "dangerousness." Disagreement
 between them is useful signal for further study, not a contradiction and not a
 proof claim.
 
+## How to Read This Result
+
+The normalized gap rescales a zero spacing by the local average spacing near
+that height. A smaller normalized gap means that two consecutive zeros are
+unusually close relative to their neighborhood.
+
+The explicit-style `gbar_upper` value is an upper-style estimate for a
+Lehmer-pair diagnostic after adding modeled tail contributions under stated
+assumptions. Smaller values are interesting in this finite comparison, but the
+estimate depends on source precision, endpoint policy, and the tail model.
+
+The finite-flow near-collision diagnostic asks how quickly a local finite zero
+model would push a close pair toward collision. It is a local dynamical proxy,
+not the full `H_t` flow.
+
+These rankings can disagree because they measure different finite features:
+local spacing, tail-adjusted Lehmer structure, and local flow dynamics. A pair
+can be strongest under one metric without being strongest under another.
+
+None of this proves RH. RH is a global statement about all non-trivial zeta
+zeros, while these are finite computations on selected data with explicit
+precision and modeling assumptions. These results also do not establish
+`Lambda <= 0`.
+
 ## B. Best Candidates in This Repository
 
 ### Candidate A
@@ -74,4 +98,3 @@ They do not prove anything global about RH. They do not establish `Lambda <= 0`.
 - More comparisons of candidate energy functionals.
 - Search for stable structural inequalities that could be stated independently
   of the current finite datasets.
-

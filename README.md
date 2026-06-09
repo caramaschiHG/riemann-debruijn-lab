@@ -1,16 +1,20 @@
 # Riemann de Bruijn Lab
 
+**A claim-safe computational workbench for zeta zeros, Lehmer pairs, and local
+de Bruijn-Newman diagnostics.**
+
 ![Python 3.11+](https://img.shields.io/badge/python-3.11%2B-blue)
 ![License: MIT](https://img.shields.io/badge/license-MIT-green)
 ![Claim Policy](https://img.shields.io/badge/claims-explicitly_labeled-purple)
 
-A reproducible Python laboratory for finite numerical experiments around zeta
-zeros, Lehmer pairs, explicit-style tail estimates, and local
-de Bruijn-Newman diagnostics.
+Riemann de Bruijn Lab is a reproducible Python repository for finite numerical
+experiments around Riemann zeta zeros, unusually small zero gaps, Lehmer-style
+diagnostics, explicit-style tail estimates, and local de Bruijn-Newman flow
+models.
 
-This repository is designed for skeptical readers: every public result should
-be reproducible, every data source should have provenance, and every
-mathematical claim should be labeled by strength.
+The repository is built for skeptical readers: every public result should be
+reproducible, every dataset should have provenance, and every mathematical
+claim should be labeled by strength.
 
 ## Research Contract
 
@@ -22,6 +26,30 @@ This lab is intentionally conservative about mathematical language.
 - Explicit-style tail estimates are conditional on stated assumptions.
 - Large historical artifacts are not treated as canonical source truth.
 
+## Why This Matters
+
+The de Bruijn-Newman program turns the Riemann Hypothesis into a question about
+how zeros move under a heat-flow deformation. Extreme Lehmer pairs and very
+small normalized gaps are natural stress tests for that picture.
+
+This repository does not try to turn finite computation into a theorem. Its
+purpose is narrower and useful: make the computations inspectable, separate
+source data from derived metrics, preserve precision warnings, and provide a
+clean Python surface for comparing candidates without overstating what the
+numbers mean.
+
+For open-source reviewers, the project is a small packaged Python codebase with
+tests, a CLI, reproducibility docs, curated data, generated reports, and a
+claim-language checker. For public readers, it is a disciplined example of how
+to publish RH-adjacent numerical work without overstated proof language.
+
+## Output Preview
+
+![Normalized gap versus explicit-style gbar upper](outputs/candidate_comparison/normalized_gap_vs_gbar.png)
+
+The plotted comparison is a finite diagnostic view over the currently available
+candidate rows. It is not evidence of a proof.
+
 ## What This Repository Contains
 
 - `riemann_lab`, a Python package for zero-table loading, gap analysis,
@@ -29,7 +57,7 @@ This lab is intentionally conservative about mathematical language.
 - `riemann-lab`, a CLI for reproducible experiments.
 - Curated processed data for candidate comparison.
 - Public result summaries under `outputs/`.
-- Claim-language checks that fail on dangerous public phrasing.
+- A claim-language checker that fails on dangerous public phrasing.
 - Issue templates for reproducibility problems and mathematical claim review.
 
 ## Claim Labels
@@ -47,59 +75,61 @@ These labels are part of the repository's quality bar, not decoration.
 
 ## Quickstart
 
-```powershell
+```bash
 python -m pip install -e ".[dev]"
 python -m pytest
 python -m ruff check .
 python scripts/check_claim_language.py
 ```
 
+On PowerShell, use the same commands.
+
 ## Clone-Safe Reproduction
 
-The following command uses committed curated CSVs and should work from a clean
-clone after installation:
+This command uses committed curated CSVs and should work from a clean clone
+after installation:
 
-```powershell
+```bash
 riemann-lab compare-candidates --out outputs/candidate_comparison
 ```
 
-The historical reproduction scripts under `scripts/reproduce_*.py` may require
+Historical reproduction scripts under `scripts/reproduce_*.py` may require
 local artifacts under `artifacts/unpacked/`. Those large and duplicated
-historical packages are intentionally ignored by Git and should be distributed
-as release assets or restored from documented sources when needed.
+historical packages are intentionally ignored by Git and can be distributed as
+release assets or restored from documented sources.
 
 ## Example CLI Commands
 
 Robin and Lagarias finite scan:
 
-```powershell
+```bash
 riemann-lab robin-scan --N 1000000 --out outputs/robin_1M
 ```
 
 Candidate comparison from committed curated data:
 
-```powershell
+```bash
 riemann-lab compare-candidates --out outputs/candidate_comparison
 ```
 
 Lehmer scan from a restored historical all-gaps artifact:
 
-```powershell
-riemann-lab lehmer-scan `
-  --zeros artifacts/unpacked/zeta_gap_collision_r80_package/zeta_gap_collision_r80_all_gaps.csv `
-  --dataset around_1e12 `
-  --radius 80 `
+```bash
+riemann-lab lehmer-scan \
+  --zeros artifacts/unpacked/zeta_gap_collision_r80_package/zeta_gap_collision_r80_all_gaps.csv \
+  --dataset around_1e12 \
+  --radius 80 \
   --out outputs/lehmer_1e12
 ```
 
 Explicit-style tail estimate from a restored historical all-gaps artifact:
 
-```powershell
-riemann-lab certify-tail `
-  --zeros artifacts/unpacked/zeta_gap_collision_r80_package/zeta_gap_collision_r80_all_gaps.csv `
-  --dataset around_1e12 `
-  --candidate 1000000008625 `
-  --radius 80 `
+```bash
+riemann-lab certify-tail \
+  --zeros artifacts/unpacked/zeta_gap_collision_r80_package/zeta_gap_collision_r80_all_gaps.csv \
+  --dataset around_1e12 \
+  --candidate 1000000008625 \
+  --radius 80 \
   --out outputs/cert_1e12
 ```
 
@@ -139,11 +169,12 @@ establish `Lambda <= 0`.
 
 Before publishing changes:
 
-```powershell
+```bash
 python -m pytest
 python -m compileall -q src scripts tests
 python -m ruff check .
 python scripts/check_claim_language.py
+riemann-lab compare-candidates
 ```
 
 These checks are intentionally short enough to run locally before each public
@@ -164,14 +195,25 @@ See [docs/limitations.md](docs/limitations.md) and
 
 ## References
 
-- Clay Mathematics Institute, Riemann Hypothesis:
-  https://www.claymath.org/millennium/riemann-hypothesis/
-- Odlyzko zeta zero tables:
-  http://www.dtc.umn.edu/~odlyzko/zeta_tables/
-- Rodgers and Tao, work on the de Bruijn-Newman constant.
-- Polymath work on de Bruijn-Newman bounds.
-- Trudgian-style explicit estimates for zero-counting error terms.
-- Robin and Lagarias RH-equivalent criteria.
+- Clay Mathematics Institute:
+  [Riemann Hypothesis](https://www.claymath.org/riemann/).
+- A. M. Odlyzko:
+  [Tables of zeros of the Riemann zeta function](http://www.dtc.umn.edu/~odlyzko/zeta_tables/).
+- Brad Rodgers and Terence Tao:
+  [The de Bruijn-Newman constant is non-negative](https://arxiv.org/abs/1801.05914).
+- D. H. J. Polymath:
+  [Effective approximation of heat flow evolution of the Riemann xi function,
+  and a new upper bound for the de Bruijn-Newman constant](https://arxiv.org/abs/1904.12438).
+- Timothy S. Trudgian:
+  [An improved upper bound for the argument of the Riemann zeta-function on
+  the critical line II](https://www.ams.org/journals/mcom/2012-81-278/S0025-5718-2011-02537-8/).
+- George Csordas, Wayne Smith, and Richard S. Varga:
+  [Lehmer pairs of zeros, the de Bruijn-Newman constant, and the Riemann
+  Hypothesis](https://www.math.kent.edu/~varga/pub/paper_206.pdf).
+- Guy Robin:
+  [Grandes valeurs de la fonction somme des diviseurs et hypothese de Riemann](http://zakuski.utsa.edu/~jagy/Robin_1984.pdf).
+- Jeffrey C. Lagarias:
+  [An Elementary Problem Equivalent to the Riemann Hypothesis](https://www.tandfonline.com/doi/abs/10.1080/00029890.2002.11919883).
 
 ## Citation
 
