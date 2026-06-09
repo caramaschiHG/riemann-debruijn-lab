@@ -16,6 +16,17 @@ The repository is built for skeptical readers: every public result should be
 reproducible, every dataset should have provenance, and every mathematical
 claim should be labeled by strength.
 
+## Navigation
+
+- For developers: start with [Quickstart](#quickstart), the `riemann-lab` CLI,
+  and the tests under `tests/`.
+- For mathematically curious readers: start with
+  [Research Contract](#research-contract), [Current Finite Candidate Summary](#current-finite-candidate-summary),
+  and [docs/current_results.md](docs/current_results.md).
+- For reviewers: start with [REPRODUCIBILITY.md](REPRODUCIBILITY.md),
+  [docs/limitations.md](docs/limitations.md), and the claim labels used in
+  generated reports.
+
 ## Research Contract
 
 This lab is intentionally conservative about mathematical language.

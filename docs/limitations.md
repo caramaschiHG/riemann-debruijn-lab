@@ -27,6 +27,11 @@ or proof. The default report language is deliberately conservative.
 Current tail outputs are labeled `EXPLICIT_STYLE_BOUND` or
 `CONDITIONAL_STATEMENT`, not `FACT_FROM_SOURCE_DATA`.
 
+Some historical artifact filenames and copied legacy source reports use
+`cert`/`certificate` naming. Public mathematical claims in this repository are
+governed by the current claim-strength labels, stated assumptions, and
+limitations, not by legacy package names or copied historical wording.
+
 The current endpoint policy subtracts the known local-window endpoint from the
 first tail bin on each side, so the local endpoint zeros are not intentionally
 double-counted. This depends on the input table really containing an ordered
