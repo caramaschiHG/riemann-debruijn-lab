@@ -1,0 +1,51 @@
+High-precision base+offset Lehmer explicit-tail report
+=======================================================
+
+What changed
+------------
+This pass avoids float64 cancellation by computing gaps/distances from offsets, while using high-precision absolute heights only inside N(T) estimates.
+It includes the around_1e21 Odlyzko block that was excluded from the previous float64 explicit-tail pass.
+
+Method
+------
+Tail outside the table window is split into geometric bins. For each bin, zero count is bounded with N_upper(B)-N_lower(A).
+N(T)=T/(2*pi)*log(T/(2*pi*e))+7/8 +/- error(T), error(T)=0.112 log T+0.278 log log T+2.510+1/T.
+Gbar is recomputed as gap^2*(G_local + explicit_tail_bound).
+
+Best row overall
+----------------
+dataset: around_1e12
+zero_index_left: 1000000008625
+zero_index_right: 1000000008626
+q_geometric: 1.25
+gap_delta_offset_hp: 0.00555696830000000000
+G_local_input: 46.1418910247119700
+gbar_local_recomputed_hp: 0.00142485682779537221
+total_tail_G_bound_hp: 0.0325747320640552423
+gbar_upper_hp: 0.00142586273215612362
+lehmer_margin_to_0_8_hp: 0.798574137267843876
+tail_over_local_G_hp: 0.000705968726912587182
+distance_left_edge_offset_hp: 2214.28694195970000
+distance_right_edge_offset_hp: 352.906248843700000
+
+Best row by dataset
+-------------------
+around_1e12 pair 1000000008625/1000000008626 q=1.25 gbar_upper=0.00142586273215612362 margin=0.798574137267843876
+first_100k pair 95248/95249 q=1.25 gbar_upper=0.00200966694417760519 margin=0.797990333055822395
+around_1e21 pair 1000000000000000001635/1000000000000000001636 q=1.25 gbar_upper=0.00577988877287867924 margin=0.794220111227121321
+
+Most conservative emitted row
+---------------------------
+dataset: around_1e12
+zero_index_left: 1000000003033
+zero_index_right: 1000000003034
+q_geometric: 4.0
+gbar_upper_hp: 0.0285716554890436027
+lehmer_margin_to_0_8_hp: 0.771428344510956397
+still_below_0_8: True
+
+Interpretation
+--------------
+All emitted rows remain below gbar=0.8 under this high-precision base+offset explicit-tail pass.
+This is a robust Lehmer-pair certificate-style calculation. It does not prove RH or Lambda<=0.
+Important caveat: the 1e21 Odlyzko source itself is stated as not guaranteed/probably accurate to 1e-6, so the certificate inherits that input limitation.

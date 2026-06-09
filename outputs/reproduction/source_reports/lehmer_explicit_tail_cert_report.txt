@@ -1,0 +1,41 @@
+Explicit-tail Lehmer certifier-style report
+============================================
+
+Method
+------
+The tail outside the Odlyzko data window is partitioned into geometric bins.
+For each bin, the zero count is bounded by N_upper(B)-N_lower(A), using
+N(T) = T/(2*pi)*log(T/(2*pi*e)) + 7/8 + error(T), with
+error(T) = 0.112 log T + 0.278 log log T + 2.510 + 1/T.
+This is conservative but not a proof-assistant certificate.
+
+Best candidate under this bound
+-------------------------------
+dataset: around_1e12
+zero_index_left: 1000000008625
+zero_index_right: 1000000008626
+q_geometric: 1.25
+gap_delta: 0.0055569682999703
+G_local: 46.14189102471197
+gbar_local: 0.0014248568277801
+total_tail_G_bound: 0.03257473051382555
+gbar_upper_style: 0.0014258627320930112
+lehmer_margin_to_0_8: 0.798574137267907
+tail_over_local_G: 0.0007059686933155746
+distance_left_edge: 2214.2869262695312
+distance_right_edge: 352.90625
+
+Most conservative row among emitted candidates
+----------------------------------------------
+dataset: around_1e12
+zero_index_left: 1000000004240
+zero_index_right: 1000000004241
+q_geometric: 4.0
+gbar_upper_style: 0.0065070801831450245
+lehmer_margin_to_0_8: 0.793492919816855
+still_below_0_8: True
+
+Interpretation
+--------------
+All emitted candidate/q rows remain below gbar=0.8 even after the explicit-tail bound.
+This helps certify Lehmer-pair robustness; it does not prove RH or Lambda<=0.

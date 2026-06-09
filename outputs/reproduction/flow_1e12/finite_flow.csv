@@ -1,0 +1,2 @@
+dataset,zero_index_left,zero_index_right,radius,pair_gap,dgap_dt0_finite_flow,naive_pair_collision_t,linearized_collision_t,finite_threshold_t,window_zero_count
+around_1e12,1000000008625,1000000008626,80,0.005556968299970322,719.5645789167991,-3.859987085900611e-06,-7.722681831192328e-06,-3.861340915596164e-06,162

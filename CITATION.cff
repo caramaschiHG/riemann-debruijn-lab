@@ -1,0 +1,9 @@
+cff-version: 1.2.0
+message: "If you use this repository, cite it and separately cite the primary mathematical/data sources."
+title: "riemann-debruijn-lab"
+version: "0.1.0"
+date-released: "2026-06-08"
+authors:
+  - name: "Riemann de Bruijn Lab Contributors"
+license: "MIT"
+abstract: "A reproducible computational research lab for zeta zeros, Lehmer pairs, explicit-style tail estimates, and local de Bruijn-Newman diagnostics. It does not prove the Riemann Hypothesis."

@@ -1,0 +1,8 @@
+assumption,value
+zero_count_formula,Riemann-von Mangoldt main term N0(T)=T/(2pi)log(T/(2pi))-T/(2pi)+7/8 with envelope N_lower <= N(T) <= N_upper.
+s_t_bound,"Trudgian-style |S(T)| <= 0.112 log T + 0.278 log log T + 2.510, plus a +/-1 slack term."
+table_precision_note,Use base+offset arithmetic; displayed offsets are the trusted gap source.
+endpoint_policy,The local window endpoints are known zeros included in G_local. The first tail bin on each side subtracts that known endpoint from the zero-count upper envelope to avoid double-counting local zeros.
+local_window_policy,G_local sums known zeros in the selected inclusive window and excludes the candidate pair endpoints. Tail bins cover only zeros outside that window.
+high_precision_policy,Candidate gaps and local distances use Decimal/mpmath base+offset arithmetic; tiny gaps are never computed by subtracting huge float64 heights.
+rigor_level,explicit_style

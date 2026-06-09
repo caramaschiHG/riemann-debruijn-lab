@@ -1,0 +1,84 @@
+{
+  "schema_version": 1,
+  "claim_strength_values": [
+    "FACT_FROM_SOURCE_DATA",
+    "NUMERICAL_COMPUTATION",
+    "HEURISTIC_ESTIMATE",
+    "EXPLICIT_STYLE_BOUND",
+    "CONDITIONAL_STATEMENT",
+    "OPEN_PROBLEM"
+  ],
+  "entries": [
+    {
+      "name": "odlyzko_first_100k",
+      "type": "historical_artifact",
+      "source": "Odlyzko zeta zero tables, copied through historical lab outputs",
+      "source_url": "http://www.dtc.umn.edu/~odlyzko/zeta_tables/",
+      "precision_note": "Low-height table. Float summaries are less risky, but reproducible gap computations should use stored ordinates or offsets.",
+      "generated_by": null,
+      "commit_reproduction_note": "Used in historical first_100k candidate and comparison outputs.",
+      "claim_strength": "FACT_FROM_SOURCE_DATA"
+    },
+    {
+      "name": "odlyzko_around_1e12",
+      "type": "historical_artifact",
+      "source": "Odlyzko zeta zero tables, copied through historical around_1e12 lab outputs",
+      "source_url": "http://www.dtc.umn.edu/~odlyzko/zeta_tables/",
+      "precision_note": "Use base+offset arithmetic. Candidate A gaps must be computed from offsets, not by subtracting large float heights.",
+      "generated_by": null,
+      "commit_reproduction_note": "Candidate A 1000000008625/1000000008626 is reproduced from historical around_1e12 artifacts.",
+      "claim_strength": "FACT_FROM_SOURCE_DATA"
+    },
+    {
+      "name": "odlyzko_around_1e21",
+      "type": "historical_artifact",
+      "source": "Odlyzko zeta zero tables, copied through historical around_1e21 lab outputs",
+      "source_url": "http://www.dtc.umn.edu/~odlyzko/zeta_tables/",
+      "precision_note": "High-zero block with stronger source precision caution. Use base+offset arithmetic and endpoint uncertainty stress tests.",
+      "generated_by": null,
+      "commit_reproduction_note": "Used for Candidate C and finite-flow comparison; ranking is precision-sensitive.",
+      "claim_strength": "FACT_FROM_SOURCE_DATA"
+    },
+    {
+      "name": "candidate_comparison_processed_inputs",
+      "type": "processed",
+      "source": "Historical gap_energy_flow_package CSV outputs",
+      "source_url": null,
+      "precision_note": "Curated processed summaries. Missing explicit-style gbar values are preserved as missing, not inferred.",
+      "generated_by": "Historical gap_energy_flow pipeline; copied into data/processed/candidate_comparison for public v0.1 defaults.",
+      "commit_reproduction_note": "Input to riemann-lab compare-candidates.",
+      "claim_strength": "NUMERICAL_COMPUTATION"
+    },
+    {
+      "name": "outputs_candidate_comparison",
+      "type": "generated",
+      "source": "data/processed/candidate_comparison/*.csv",
+      "source_url": null,
+      "precision_note": "Finite comparison over available candidates only. Finite-flow and neighbor correction are heuristic diagnostics.",
+      "generated_by": "riemann-lab compare-candidates",
+      "commit_reproduction_note": "Refresh before release with riemann-lab compare-candidates.",
+      "claim_strength": "CONDITIONAL_STATEMENT"
+    },
+    {
+      "name": "outputs_reproduction",
+      "type": "generated",
+      "source": "Historical artifacts plus current scripts",
+      "source_url": null,
+      "precision_note": "Contains a mix of copied historical reports and newly generated outputs. Check each report for claim strength.",
+      "generated_by": "scripts/build_reproduction_report.py and reproduction scripts",
+      "commit_reproduction_note": "Refresh before release when historical artifacts are available locally.",
+      "claim_strength": "CONDITIONAL_STATEMENT"
+    },
+    {
+      "name": "riemann_hypothesis",
+      "type": "generated",
+      "source": "Open mathematical problem",
+      "source_url": "https://www.claymath.org/millennium/riemann-hypothesis/",
+      "precision_note": "This repository does not prove RH.",
+      "generated_by": null,
+      "commit_reproduction_note": "Any RH claim should fail claim-language review.",
+      "claim_strength": "OPEN_PROBLEM"
+    }
+  ]
+}
+

@@ -1,0 +1,62 @@
+RH LAB — relatório experimental
+================================
+
+Isto NÃO é prova da Hipótese de Riemann. É um laboratório para testar equivalências e heurísticas.
+
+N Robin/Lagarias: 1000000
+Zeros calculados: 100
+Tempo Robin/Lagarias: 8.06s
+Tempo zeros: 11.00s
+Tempo total: 19.07s
+
+Critério de Robin — candidatos mais perigosos
+RH equivale a sigma(n) < exp(gamma) n log log n para todo n > 5040.
+exp(gamma) ~= 1.781072417990198
+
+#1: n=10080, sigma(n)=39312, ratio=1.755814338925297, margem=0.025258079064901
+#2: n=55440, sigma(n)=232128, ratio=1.751246514887494, margem=0.029825903102704
+#3: n=27720, sigma(n)=112320, ratio=1.742536723813828, margem=0.038535694176370
+#4: n=7560, sigma(n)=28800, ratio=1.739916519202759, margem=0.041155898787439
+#5: n=15120, sigma(n)=59520, ratio=1.738558674289028, margem=0.042513743701170
+#6: n=110880, sigma(n)=471744, ratio=1.734849010303364, margem=0.046223407686834
+#7: n=720720, sigma(n)=3249792, ratio=1.733065356238066, margem=0.048007061752132
+#8: n=166320, sigma(n)=714240, ratio=1.726928742547301, margem=0.054143675442897
+#9: n=65520, sigma(n)=270816, ratio=1.717889001147717, margem=0.063183416842481
+#10: n=332640, sigma(n)=1451520, ratio=1.716096975360581, margem=0.064975442629617
+
+Critério de Lagarias — casos mais apertados
+RH equivale a sigma(n) <= H_n + exp(H_n) log(H_n) para todo n >= 1.
+
+#1: n=1, sigma(n)=1, rhs=1.000000000000000, margem=0.000000000000000
+#2: n=2, sigma(n)=3, rhs=3.317168543411802, margem=0.317168543411802
+#3: n=12, sigma(n)=28, rhs=28.321837259645406, margem=0.321837259645406
+#4: n=6, sigma(n)=12, rhs=12.834178719506252, margem=0.834178719506252
+#5: n=4, sigma(n)=7, rhs=7.977982899505048, margem=0.977982899505048
+#6: n=3, sigma(n)=4, rhs=5.624531520927277, margem=1.624531520927277
+#7: n=24, sigma(n)=60, rhs=61.757499523312418, margem=1.757499523312418
+#8: n=8, sigma(n)=15, rhs=17.863318176741476, margem=2.863318176741476
+#9: n=60, sigma(n)=168, rhs=170.976684264692494, margem=2.976684264692494
+#10: n=5, sigma(n)=6, rhs=10.382267698551074, margem=4.382267698551074
+
+Gaps dos zeros — menores gaps normalizados
+normalized_gap = gap / espacamento_medio_assintotico. Menor = par mais 'apertado'.
+
+#1: gap entre zero 34 e 35, gamma=(111.029535543170, 111.874659176993), gap=0.845123633823, normalized=0.386800160808
+#2: gap entre zero 71 e 72, gamma=(184.874467848387, 185.598783677707), gap=0.724315829320, normalized=0.390074243799
+#3: gap entre zero 91 e 92, gamma=(220.714918839314, 221.430705554693), gap=0.715786715379, normalized=0.405628805326
+#4: gap entre zero 97 e 98, gamma=(231.250188700499, 231.987235253180), gap=0.737046552681, normalized=0.423142975617
+#5: gap entre zero 63 e 64, gamma=(169.094515415569, 169.911976479412), gap=0.817461063843, normalized=0.428688634004
+#6: gap entre zero 53 e 54, gamma=(150.053520420785, 150.925257612241), gap=0.871737191457, normalized=0.440644467053
+#7: gap entre zero 27 e 28, gamma=(94.651344040520, 95.870634228245), gap=1.219290187725, normalized=0.527588616558
+#8: gap entre zero 13 e 14, gamma=(59.347044002602, 60.831778524610), gap=1.484734522007, normalized=0.533561547396
+#9: gap entre zero 93 e 94, gamma=(224.007000254604, 224.983324669582), gap=0.976324414978, normalized=0.555659840051
+#10: gap entre zero 19 e 20, gamma=(75.704690699084, 77.144840068875), gap=1.440149369791, normalized=0.572657311116
+
+Energias experimentais dos gaps
+E_alpha=1.0: 0.930493043503608
+E_alpha=1.5: 0.226171515597324
+E_alpha=2.0: 0.085907091492775
+E_alpha=3.0: 0.035555959936505
+
+Ideia testável seguinte:
+Se alguma energia de gaps puder ser limitada uniformemente para a família H_t da deformação de de Bruijn-Newman, isso poderia bloquear colisões de zeros. Este script apenas mede uma versão finita e experimental em H_0 assumindo zeros calculados na reta crítica.

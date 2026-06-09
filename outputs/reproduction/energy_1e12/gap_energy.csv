@@ -1,0 +1,5 @@
+dataset,alpha,weight,energy
+around_1e12,1.0,index,3.910268505778521e-07
+around_1e12,1.5,index,3.9102684953674094e-13
+around_1e12,2.0,index,3.9102684849562915e-19
+around_1e12,3.0,index,3.910268464134046e-31

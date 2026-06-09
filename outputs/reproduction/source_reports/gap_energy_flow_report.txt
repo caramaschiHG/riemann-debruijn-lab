@@ -1,0 +1,50 @@
+Gap Energy + Finite Flow Lab Report
+============================================
+
+Purpose
+- Test whether extreme Lehmer pairs show stable local inverse-gap energy.
+- Simulate a finite Calogero-style zero motion model: dx_j/dt = 2 sum_{k != j} 1/(x_j-x_k).
+- This is heuristic/diagnostic, not a proof of RH or a rigorous de Bruijn-Newman computation.
+
+Total candidate pairs tested: 13
+Radius rows generated: 65
+
+Best candidate by local gbar at largest available radius:
+  dataset: around_1e12
+  pair: 1000000008625/1000000008626
+  radius: 80
+  gap: 0.00555696829997032
+  normalized gap: 0.0216462265659802
+  gbar_window: 0.00140250285320525
+  G_window: 45.4179904624277
+  finite-flow dgap/dt at t=0: 719.564578916799
+  naive two-body collision time: -3.85998708585938e-06
+  linearized collision time: -7.72268183119233e-06
+  finite ODE threshold time: -3.8606599942424e-06
+
+Smallest normalized gap at largest available radius:
+  dataset: around_1e12
+  pair: 1000000008625/1000000008626
+  normalized gap: 0.0216462265659802
+  gbar_window: 0.00140250285320525
+
+Top 12 candidate summary:
+    dataset        zero_index_left       zero_index_right  radius  pair_gap  pair_normalized_gap  gbar_window  E_norm_inverse_gap2  naive_pair_collision_t  finite_ode_threshold_t
+around_1e12          1000000008625          1000000008626      80  0.005557             0.021646     0.001403          2523.731090               -0.000004               -0.000004
+ first_100k                  95248                  95249      80  0.014701             0.021860     0.001986          2462.805189               -0.000027               -0.000027
+ first_100k                  87761                  87762      80  0.019485             0.028746     0.003715          1556.617452               -0.000047               -0.000047
+ first_100k                  82552                  82553      80  0.020850             0.030579     0.004512          1350.873029               -0.000054               -0.000054
+ first_100k                  44555                  44556      80  0.029538             0.040746     0.005697           891.683142               -0.000109               -0.000109
+around_1e21 1000000000000000001635 1000000000000000001636      80  0.005300             0.037605     0.005710           988.348681               -0.000004               -0.000004
+ first_100k                  73997                  73998      80  0.025839             0.037496     0.005902          1009.147028               -0.000083               -0.000084
+around_1e12          1000000004240          1000000004241      80  0.011381             0.044333     0.006405           858.261718               -0.000016               -0.000016
+ first_100k                   6709                   6710      80  0.037698             0.042098     0.006846           893.798955               -0.000178               -0.000178
+ first_100k                  18859                  18860      80  0.035307             0.044457     0.010895           856.324704               -0.000156               -0.000156
+around_1e21 1000000000000000006362 1000000000000000006363      80  0.009249             0.065621     0.012567           673.819309               -0.000011               -0.000011
+around_1e12          1000000008732          1000000008733      80  0.014716             0.057324     0.016614           727.395875               -0.000027               -0.000027
+
+Observations
+1. The strongest pairs remain stable when the local radius grows.
+2. The finite-flow threshold times stay close to the two-body -gap^2/8 scale; neighbors modify the constant, but do not erase the collision-pressure signal.
+3. This supports using a gap-energy functional as a diagnostic, but it still does not give the missing global inequality needed for Lambda <= 0.
+4. The next mathematical target is to bound a global weighted energy E(t)=sum w_j/g_j(t)^2 under the real heat-flow, not merely this finite static proxy.
